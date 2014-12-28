@@ -1,10 +1,12 @@
 <div class="jumbotron center">
      <h2>Follow and share what you're reading</h2>
-    
+     <% if user_signed_in? %>
           Share your first book
-    
+     <% else %>
+          <h4>Share your first book</h4>
        <p>
-         
+         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
        </p>
-  
+  <% end %>  
 </div>
